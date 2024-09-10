@@ -1,0 +1,3 @@
+/home/andra/workspace/my-archive/build/CMakeFiles/archive.dir
+/home/andra/workspace/my-archive/build/CMakeFiles/edit_cache.dir
+/home/andra/workspace/my-archive/build/CMakeFiles/rebuild_cache.dir

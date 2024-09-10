@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/archive.dir/src/core/archive.cpp.o CMakeFiles/archive.dir/src/core/buffer.cpp.o CMakeFiles/archive.dir/src/main.cpp.o CMakeFiles/archive.dir/src/util/logger.cpp.o -o archive
