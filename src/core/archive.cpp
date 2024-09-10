@@ -43,3 +43,42 @@ void File::get_file(std::string path)
 	this->path = path;
 	name = get_name_from_path(path);
 }
+
+HeaderFile::HeaderFile(std::string path)
+{
+	HeaderPath = path;
+}
+
+void HeaderFile::insert_file(File file)
+{
+	files.push_back(file);
+}
+
+void HeaderFile::write_file()
+{
+	if(HeaderPath.empty())
+	{
+		logger::error("no file to write");
+		return;
+	}
+
+	std::ofstream file(HeaderPath, std::ofstream::binary | std::ios::app);
+
+	if(!file)
+	{
+		std::cerr << "error opening file for writing\n";
+		return;
+	}
+
+	for(size_t i = 0; i < files.size(); i++)
+	{
+		file << files[i].name;
+		file << files[i].path;
+		file << files[i].size;
+		for(size_t j = 0; j < files[i].buffers.size(); j++)
+		{
+			file << files[i].buffers[j];
+		}
+	}
+	file.close();
+}

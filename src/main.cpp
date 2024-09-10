@@ -17,5 +17,8 @@ int main()
 		std::cout << file.buffers[i];
 	}
 	std::cout << std::endl;
+	HeaderFile header("./archivewow.www");
+	header.insert_file(file);
+	header.write_file();
 	return 0;
 }

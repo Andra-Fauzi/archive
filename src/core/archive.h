@@ -19,9 +19,13 @@ class File {
 // structure for making archive file
 class HeaderFile {
 	public:
+		HeaderFile(std::string path);
+		void insert_file(File file);
+		void write_file();
 	private:
+		std::string HeaderPath;
 		const char* signature = "AC01";
-		File* file;
+		std::vector<File> files;
 
 };
 
